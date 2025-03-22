@@ -12,16 +12,12 @@ class Solution:
         
         odd = head
         even = head.next
-        res_even = even  # Save the head of the even list
-
-        # First loop to connect odd nodes
+        res_even = even 
         while odd and odd.next and odd.next.next:
             odd.next = odd.next.next
             even.next = even.next.next
-             
             even = even.next
             odd = odd.next  
-        
         odd.next = res_even
         
         return head
